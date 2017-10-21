@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title>Internationalization - Bootsnipp.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        .icon-small
+{
+    height:18px;
+    margin:0;
+	padding:0;
+}
+
+.icon-medium
+{
+    height:22px;
+	margin:0;
+	padding:0;
+}
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img id="imgNavSel" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavSel">BRA</span> <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+            	        <li><a id="navBra" href="#" class="language"> <img id="imgNavBra" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavBra">Português - BR</span></a></li>
+						<li><a id="navPtg" href="#" class="language"> <img id="imgNavPtg" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavPtg">Português - PT</span></a></li>
+						<li><a id="navIta" href="#" class="language"> <img id="imgNavIta" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavIta">Italiano</span></a></li>
+						<li><a id="navEsp" href="#" class="language"> <img id="imgNavEsp" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavEsp">Español</span></a></li>
+                        <li><a id="navDeu" href="#" class="language"> <img id="imgNavDeu" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavDeu">Deutsch</span></a></li>
+        			    <li><a id="navFra" href="#" class="language"><img id="imgNavFra" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavFra">Francais</span></a></li>
+        			    <li><a id="navEngUS" href="#" class="language"><img id="imgNavEngUS" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavEngUS">English - US</span></a></li>
+						<li><a id="navEngGB" href="#" class="language"><img id="imgNavEngGB" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavEngGB">English - GB</span></a></li>
+        	        </ul>
+                </li>
+            </ul>
+        </div> <!--/.navbar-collapse -->
+    </div>
+</nav>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1>Internationalization </h1>
+        <h3>In the navbar using ul dropdown<h3>
+        <h3>In the page using button group<h3>
+        <p>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default btn-lg">
+        	<img id="imgBtnSel" src="" alt="..." class="img-thumbnail icon-medium">  
+        	<span id="lanBtnSel">BRA</span></button>
+        	  <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        	    <span class="caret"></span>
+        	  </button>
+        	  <ul class="dropdown-menu" role="menu">
+        		<li><a id="btnBra" href="#" class="language"> <img id="imgBtnBra" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanBtnlBra">Português - BR</span></a></li>
+				<li><a id="btnPtg" href="#" class="language"> <img id="imgBtnPtg" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanBtnlPtg">Português - PT</span></a></li>
+				<li><a id="btnIta" href="#" class="language"> <img id="imgBtnIta" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanBtnlIta">Italiano</span></a></li>
+				<li><a id="btnEsp" href="#" class="language"> <img id="imgBtnEsp" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanBtnlEsp">Español</span></a></li>
+        	    <li><a id="btnDeu" href="#" class="language"> <img id="imgBtnDeu" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanBtnDeu">Deutsch</span></a></li>
+        	    <li><a id="btnFra" href="#" class="language"> <img id="imgBtnFra" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanBtnFra">Francais</span></a></li>
+        	    <li><a id="btnEngUS" href="#" class="language"> <img id="imgBtnEngUS" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanBtnEngUS">English - US</span></a></li>
+				<li><a id="btnEngGB" href="#" class="language"> <img id="imgBtnEngGB" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanBtnEngGB">English - GB</span></a></li>
+        	  </ul>
+        </div>
+        </p>
+    </div>
+</div>
+    
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+        var braImgLink = "br.png";
+		var ptgImgLink = "pt.png";
+		var itaImgLink = "it.png";
+		var espImgLink = "es.png";
+    	var engUSImgLink = "us.png";
+		var engGBImgLink = "gb.png";
+		var deuImgLink = "de.png";
+		var fraImgLink = "fr.png";
+
+		var imgBtnSel = $('#imgBtnSel');
+		var imgBtnBra = $('#imgBtnBra');
+		var imgBtnPtg = $('#imgBtnPtg');
+		var imgBtnIta = $('#imgBtnIta');
+		var imgBtnEsp = $('#imgBtnEsp');
+		var imgBtnEngUS = $('#imgBtnEngUS');
+		var imgBtnEngGB = $('#imgBtnEngGB');
+		var imgBtnDeu = $('#imgBtnDeu');
+		var imgBtnFra = $('#imgBtnFra');
+
+		var imgNavSel = $('#imgNavSel');
+		var imgNavBra = $('#imgNavBra');
+		var imgNavPtg = $('#imgNavPtg');
+		var imgNavIta = $('#imgNavIta');
+		var imgNavEsp = $('#imgNavEsp');
+		var imgNavEngUS = $('#imgNavEngUS');
+		var imgNavEngGB = $('#imgNavEngGB');
+		var imgNavDeu = $('#imgNavDeu');
+		var imgNavFra = $('#imgNavFra');
+
+		var spanNavSel = $('#lanNavSel');
+		var spanBtnSel = $('#lanBtnSel');
+
+		imgBtnSel.attr("src",braImgLink);
+		imgBtnBra.attr("src",braImgLink);
+		imgBtnPtg.attr("src",ptgImgLink);
+		imgBtnIta.attr("src",itaImgLink);
+		imgBtnEsp.attr("src",espImgLink);
+		imgBtnEngUS.attr("src",engUSImgLink);
+		imgBtnEngGB.attr("src",engGBImgLink);
+		imgBtnDeu.attr("src",deuImgLink);
+		imgBtnFra.attr("src",fraImgLink);
+
+		imgNavSel.attr("src",braImgLink);
+		imgNavBra.attr("src",braImgLink);
+		imgNavPtg.attr("src",ptgImgLink);
+		imgNavIta.attr("src",itaImgLink);
+		imgNavEsp.attr("src",espImgLink);
+		imgNavEngUS.attr("src",engUSImgLink);
+		imgNavEngGB.attr("src",engGBImgLink);
+		imgNavDeu.attr("src",deuImgLink);
+		imgNavFra.attr("src",fraImgLink);
+
+		$( ".language" ).on( "click", function( event ) {
+			var currentId = $(this).attr('id');
+
+			if(currentId == "navBra") {
+				imgNavSel.attr("src",braImgLink);
+				spanNavSel.text("BRA");
+			} else if (currentId == "navPtg") {
+				imgNavSel.attr("src",ptgImgLink);
+				spanNavSel.text("POR");
+			} else if (currentId == "navIta") {
+				imgNavSel.attr("src",itaImgLink);
+				spanNavSel.text("ITA");
+			} else if (currentId == "navEsp") {
+				imgNavSel.attr("src",espImgLink);
+				spanNavSel.text("ESP");
+			} else if (currentId == "navEngUS") {
+				imgNavSel.attr("src",engUSImgLink);
+				spanNavSel.text("ENG");
+			} else if (currentId == "navEngGB") {
+				imgNavSel.attr("src",engGBImgLink);
+				spanNavSel.text("ENG");
+			} else if (currentId == "navDeu") {
+				imgNavSel.attr("src",deuImgLink);
+				spanNavSel.text("DEU");
+			} else if (currentId == "navFra") {
+				imgNavSel.attr("src",fraImgLink);
+				spanNavSel.text("FRA");
+			}
+
+			if(currentId == "btnBra") {
+				imgBtnSel.attr("src",braImgLink);
+				spanBtnSel.text("BRA");
+			} else if (currentId == "btnPtg") {
+				imgBtnSel.attr("src",ptgImgLink);
+				spanBtnSel.text("POR");
+			} else if (currentId == "btnIta") {
+				imgBtnSel.attr("src",itaImgLink);
+				spanBtnSel.text("ITA");
+			} else if (currentId == "btnEsp") {
+				imgBtnSel.attr("src",espImgLink);
+				spanBtnSel.text("ESP");
+			} else if (currentId == "btnEngUS") {
+				imgBtnSel.attr("src",engUSImgLink);
+				spanBtnSel.text("ENG");
+			}  else if (currentId == "btnEngGB") {
+				imgBtnSel.attr("src",engGBImgLink);
+				spanBtnSel.text("ENG");
+			} else if (currentId == "btnDeu") {
+				imgBtnSel.attr("src",deuImgLink);
+				spanBtnSel.text("DEU");
+			} else if (currentId == "btnFra") {
+				imgBtnSel.attr("src",fraImgLink);
+				spanBtnSel.text("FRA");
+			}
+			
+		});
+});
+</script>
+</body>
+</html>
