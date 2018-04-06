@@ -6,4 +6,6 @@
 
 ![screenshots](screens/simple-table.png)
 
+![screenshots](screens/map.png)
+
 ![screenshots](screens/float-label.png)
