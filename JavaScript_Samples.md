@@ -1,4 +1,4 @@
-JavaScript Samples
+# JavaScript Samples
 
 DD/MM/YYYY format
 If you work with this format, then you can split the date in order to get day, month and year separately and then use it in another constructor - Date(year, month, day):
