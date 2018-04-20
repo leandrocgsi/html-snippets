@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Using placeholders</title>
+	<script src="https://cdn.ckeditor.com/4.9.2/standard-all/ckeditor.js"></script>
+</head>
+
+<body>
+
+	<textarea name="document" id="document" cols="30" rows="10">My Placeholder</textarea>
+
+	<script>
+		CKEDITOR.replace( 'document', {
+			enterMode: CKEDITOR.ENTER_BR,
+			extraPlugins: 'placeholder',
+			height: 220
+		} );
+	</script>
+</body>
+
+</html>
