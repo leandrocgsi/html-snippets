@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://fiddle.jshell.net/0vqp9bh9/3/show/light/ -->
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="googlebot" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Pie Chart Example</title>
+		<style>
+			#piechart
+			{
+				width: 400px;
+				height: 300px;	
+			}
+			#piechart-value
+			{
+				padding: 51px 0;
+				margin-left: 137px;
+				width: 50px;
+				height: 30px;
+				background: none;
+				position: absolute;
+				line-height: 200px; 
+				z-index: 999;
+				font-family: Arial;
+				font-size: 20px;				
+			}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="./loader.js"></script>
+		
+
+		<div id="piechart-value">50 %</div>
+		<div id="piechart"></div>
+		<div id="columnchart_material"></div>
+	   
+		<script type="text/javascript">
+
+
+			  google.charts.load('current', {'packages':['corechart']});
+			  google.charts.setOnLoadCallback(drawChart);
+
+			  function drawChart() {
+
+				var data = google.visualization.arrayToDataTable([
+				  ['Task', 'Hours per Day'],
+				  ['Restaurante',     11],
+				  ['Supermercado',      2],
+				  ['Farmácia',  2],
+				  ['Outros', 2]
+				]);
+
+
+				var options = {
+				  pieHole: 0.90,
+				  pieSliceText: 'none',
+				  pieSliceTextStyle: {
+					color: 'black',
+				  },
+				 'width':400,
+				 'height':300,
+				 //legend: { position: "bottom" },
+				};
+				
+				var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+				chart.draw(data, options);
+			  }
+			  
+			  //document.getElementById("piechart-value").innerHTML = "65%";
+		</script>
+		
+		<script type="text/javascript">
+		
+		  google.charts.load('current', {'packages':['bar']});
+		  google.charts.setOnLoadCallback(drawChart);
+
+		  function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+			  ['', 'Restaurante', 'Supermercado'],
+			  ['Jan', 1000, 400],
+			  ['Fev', 1170, 460],
+			  ['Mar', 660, 1120]
+			]);
+
+			var options = {
+				 'width':370,
+				 'height':120,
+				 vAxis: {
+					format: 'decimal',
+					gridlines: {
+						color: 'transparent'
+					}
+				 },
+			};
+
+			var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+			chart.draw(data, google.charts.Bar.convertOptions(options));
+		  }
+		</script>
+
+	</body>
+</html>
