@@ -74,35 +74,49 @@
 			  
 			  //document.getElementById("piechart-value").innerHTML = "65%";
 		</script>
-		
 		<script type="text/javascript">
-		
-		  google.charts.load('current', {'packages':['bar']});
-		  google.charts.setOnLoadCallback(drawChart);
 
-		  function drawChart() {
-			var data = google.visualization.arrayToDataTable([
-			  ['', 'Restaurante', 'Supermercado'],
-			  ['Jan', 1000, 400],
-			  ['Fev', 1170, 460],
-			  ['Mar', 660, 1120]
-			]);
+			google.charts.load('current', { 'packages': ['corechart'] });
+			google.charts.setOnLoadCallback(drawStuff);
 
-			var options = {
-				 'width':370,
-				 'height':120,
-				 vAxis: {
-					format: 'decimal',
-					gridlines: {
-						color: 'transparent'
+			function drawStuff() {
+
+				var data = new google.visualization.DataTable();
+
+				data.addColumn('string', '');
+				data.addColumn('number', '@Model.BarChart[0].TopSegment');
+				data.addColumn('number', 'Outros');
+
+				data.addRows([
+					  ['', 'Restaurante', 'Supermercado'],
+					  ['Jan', 1000, 400],
+					  ['Fev', 1170, 460],
+					  ['Mar', 660, 1120]
+				]);
+
+				var formatter = new google.visualization.NumberFormat({ decimalSymbol: ',', groupingSymbol: '.', negativeColor: 'red', negativeParens: true, prefix: 'R$ ' });
+				formatter.format(data, 1);
+				formatter.format(data, 2);
+
+				var options = {
+					chartArea: {
+						height: '56%'
+					},
+					hAxis: {
+						format: 'decimal',
+						gridlines: {
+							color: 'transparent'
+						}
+					},
+					theme: 'material',
+					legend: {
+						position: 'bottom'
 					}
-				 },
-			};
+				};
 
-			var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-			chart.draw(data, google.charts.Bar.convertOptions(options));
-		  }
+				var table = new google.visualization.ColumnChart(document.getElementById('columnchart_material'));
+				table.draw(data, options);
+			}
 		</script>
 
 	</body>
