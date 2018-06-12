@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)http://fiddle.jshell.net/asgallant/6Y8jF/2/show/light/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title></title>
+  
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script type="text/javascript" src="./mootools-core-1.4.5-nocompat.js.download"></script>
+    <link rel="stylesheet" type="text/css" href="./normalize.css">
+
+    <link rel="stylesheet" type="text/css" href="./result-light.css">
+
+      <script type="text/javascript" src="./jsapi"></script>
+  <style type="text/css">
+    #chart_div {
+    float: left;
+}
+#legend {
+    margin: 30px 0 0 0;
+    float: left;
+    list-style: none;
+}
+div.legendMarker {
+    height: 1em;
+    width: 1em;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+  </style>
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">
+
+
+    
+google.load('visualization', '1', {packages: ['corechart']});
+google.setOnLoadCallback(drawChart);
+
+function drawChart() {
+    // Create the data table.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Topping');
+    data.addColumn('number', 'Slices');
+    data.addRows([
+        ['Mushrooms', 3],
+        ['Onions', 5],
+        ['Olives', 1],
+        ['Zucchini', 1],
+        ['Pepperoni', 6],
+        ['Sausage', 3],
+        ['Peppers', 5],
+        ['Tomatoes', 2],
+        ['Meatballs', 4],
+        ['Extra Cheese', 3]
+    ]);
+
+    var colors = ["#3366cc","#dc3912","#ff9900","#109618","#990099","#0099c6","#dd4477","#aaaa11","#22aa99","#994499"];
+    
+    var legend = document.getElementById('legend');
+    var lis = [];
+    
+    var total = 0;
+    for (var i = 0; i < data.getNumberOfRows(); i++) {
+        // increment the total
+        total += data.getValue(i, 1);
+        
+        // get the data
+        var label = data.getValue(i, 0);
+        var value = data.getValue(i, 1);
+        var percent = Math.ceil(1000 * value / total) / 10;
+        
+        // create the legend entry
+        lis[i] = document.createElement('li');
+        lis[i].id = 'legend_' + data.getValue(i, 0);
+        lis[i].innerHTML = '<div class="legendMarker" style="background-color:' + colors[i] + ';"></div>' + label + ': ' + value + ' (' + percent + '%)</span>';
+        
+        // append to the legend list
+        legend.appendChild(lis[i]);
+    }
+    
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    chart.draw(data, {
+        title: 'How Much Pizza I Ate Last Night',
+        width: 300,
+        height: 300,
+        colors: colors,
+        legend: {
+            position: 'none'
+        }
+    });
+}
+
+
+</script><script src="./saved_resource" type="text/javascript"></script><link href="./ui+pt_BR.css" type="text/css" rel="stylesheet"><script src="./format+pt_BR,default+pt_BR,ui+pt_BR,corechart+pt_BR.I.js.download" type="text/javascript"></script>
+
+<link href="./tooltip.css" rel="stylesheet" type="text/css"></head>
+<body>
+  <div id="chart_div"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 300px; height: 300px;"><div aria-label="Um gráfico." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="300" height="300" aria-label="Um gráfico." style="overflow: hidden;"><defs id="defs"></defs><rect x="0" y="0" width="300" height="300" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><text text-anchor="start" x="58" y="38.35" font-family="Arial" font-size="11" font-weight="bold" stroke="none" stroke-width="0" fill="#000000">How Much Pizza I Ate Last Night</text><rect x="58" y="29" width="185" height="11" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g><g><path d="M151,151L151,59A92,92,0,0,1,200.73895520591498,73.60467497953134L151,151A0,0,0,0,0,151,151" stroke="#ffffff" stroke-width="1" fill="#3366cc"></path><text text-anchor="start" x="158.65091457349013" y="86.22228738511723" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#ffffff">9,1%</text></g><g><path d="M151,151L200.73895520591498,73.60467497953134A92,92,0,0,1,242.89579520483673,146.62246374421574L151,151A0,0,0,0,0,151,151" stroke="#ffffff" stroke-width="1" fill="#dc3912"></path><text text-anchor="start" x="191.5937796341172" y="122.46424122837888" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#ffffff">15,2%</text></g><g><path d="M151,151L242.89579520483673,146.62246374421574A92,92,0,0,1,242.0635726530458,164.0929651211422L151,151A0,0,0,0,0,151,151" stroke="#ffffff" stroke-width="1" fill="#ff9900"></path></g><g><path d="M151,151L242.0635726530458,164.0929651211422A92,92,0,0,1,237.9400753217495,181.09025262520277L151,151A0,0,0,0,0,151,151" stroke="#ffffff" stroke-width="1" fill="#109618"></path></g><g><path d="M151,151L237.9400753217495,181.0902526252028A92,92,0,0,1,159.7451559839848,242.5834168767238L151,151A0,0,0,0,0,151,151" stroke="#ffffff" stroke-width="1" fill="#990099"></path><text text-anchor="start" x="176.68023884180235" y="207.21493346437236" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#ffffff">18,2%</text></g><g><path d="M151,151L101.26104479408497,73.60467497953137A92,92,0,0,1,151,59L151,151A0,0,0,0,0,151,151" stroke="#ffffff" stroke-width="1" fill="#994499"></path><text text-anchor="start" x="118.34908542650984" y="86.22228738511724" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#ffffff">9,1%</text></g><g><path d="M151,151L61.59333571423416,129.3101779331327A92,92,0,0,1,101.26104479408497,73.60467497953137L151,151A0,0,0,0,0,151,151" stroke="#ffffff" stroke-width="1" fill="#22aa99"></path><text text-anchor="start" x="82.5052637329407" y="117.11261913915234" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#ffffff">12,1%</text></g><g><path d="M151,151L59.93642734695419,164.09296512114224A92,92,0,0,1,61.59333571423416,129.3101779331327L151,151A0,0,0,0,0,151,151" stroke="#ffffff" stroke-width="1" fill="#aaaa11"></path><text text-anchor="start" x="70.47296610801322" y="151.6094729816325" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#ffffff">6,1%</text></g><g><path d="M151,151L108.84316000107825,232.77286127625297A92,92,0,0,1,59.93642734695419,164.09296512114224L151,151A0,0,0,0,0,151,151" stroke="#ffffff" stroke-width="1" fill="#dd4477"></path><text text-anchor="start" x="82.50526373294073" y="192.58738086084767" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#ffffff">15,2%</text></g><g><path d="M151,151L159.7451559839848,242.5834168767238A92,92,0,0,1,108.84316000107825,232.77286127625297L151,151A0,0,0,0,0,151,151" stroke="#ffffff" stroke-width="1" fill="#0099c6"></path><text text-anchor="start" x="124.78854904143799" y="225.9917630189109" font-family="Arial" font-size="11" stroke="none" stroke-width="0" fill="#ffffff">9,1%</text></g><g></g></svg><div aria-label="Uma representação tabular dos dados no gráfico." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>Topping</th><th>Slices</th></tr></thead><tbody><tr><td>Mushrooms</td><td>3</td></tr><tr><td>Onions</td><td>5</td></tr><tr><td>Olives</td><td>1</td></tr><tr><td>Zucchini</td><td>1</td></tr><tr><td>Pepperoni</td><td>6</td></tr><tr><td>Sausage</td><td>3</td></tr><tr><td>Peppers</td><td>5</td></tr><tr><td>Tomatoes</td><td>2</td></tr><tr><td>Meatballs</td><td>4</td></tr><tr><td>Extra Cheese</td><td>3</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 310px; left: 310px; white-space: nowrap; font-family: Arial; font-size: 11px; font-weight: bold;">How Much Pizza I Ate Last Night</div><div></div></div></div>
+<ul id="legend"><li id="legend_Mushrooms"><div class="legendMarker" style="background-color:#3366cc;"></div>Mushrooms: 3 (100%)</li><li id="legend_Onions"><div class="legendMarker" style="background-color:#dc3912;"></div>Onions: 5 (62.5%)</li><li id="legend_Olives"><div class="legendMarker" style="background-color:#ff9900;"></div>Olives: 1 (11.2%)</li><li id="legend_Zucchini"><div class="legendMarker" style="background-color:#109618;"></div>Zucchini: 1 (10%)</li><li id="legend_Pepperoni"><div class="legendMarker" style="background-color:#990099;"></div>Pepperoni: 6 (37.5%)</li><li id="legend_Sausage"><div class="legendMarker" style="background-color:#0099c6;"></div>Sausage: 3 (15.8%)</li><li id="legend_Peppers"><div class="legendMarker" style="background-color:#dd4477;"></div>Peppers: 5 (20.9%)</li><li id="legend_Tomatoes"><div class="legendMarker" style="background-color:#aaaa11;"></div>Tomatoes: 2 (7.7%)</li><li id="legend_Meatballs"><div class="legendMarker" style="background-color:#22aa99;"></div>Meatballs: 4 (13.4%)</li><li id="legend_Extra Cheese"><div class="legendMarker" style="background-color:#994499;"></div>Extra Cheese: 3 (9.1%)</li></ul>
+  
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "6Y8jF"
+      }], "*")
+    }
+  </script>
+
+
+</body></html>
